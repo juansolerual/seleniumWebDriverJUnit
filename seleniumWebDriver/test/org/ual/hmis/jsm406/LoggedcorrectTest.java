@@ -50,7 +50,7 @@ public class LoggedcorrectTest {
   public void loggedcorrect() {
     driver.get("https://facey-a2397.web.app/home");
     try {
-      Thread.sleep(3000);
+      Thread.sleep(4000);
   } catch (InterruptedException e) {
       e.printStackTrace();
   }
@@ -103,7 +103,7 @@ public class LoggedcorrectTest {
 
     driver.findElement(By.xpath("//button[@id=\'loginButton\']")).click();
     try {
-      Thread.sleep(2000);
+      Thread.sleep(3000);
   } catch (InterruptedException e) {
       e.printStackTrace();
   }

@@ -25,46 +25,50 @@ import org.openqa.selenium.Keys;
 import java.util.*;
 import java.net.MalformedURLException;
 import java.net.URL;
+
 public class PasswordtooshortTest {
   private WebDriver driver;
   private Map<String, Object> vars;
   JavascriptExecutor js;
+
   @Before
-  public void setUp() throws Exception{
+  public void setUp() throws Exception {
     // System.setProperty("webdriver.gecko.driver", "drivers/geckodriver.exe");
     // System.setProperty("webdriver.chrome.driver", "drivers/chromedriver.exe");
     // driver = new ChromeDriver();
     FirefoxOptions firefoxOptions = new FirefoxOptions();
     firefoxOptions.setHeadless(true);
     driver = new FirefoxDriver(firefoxOptions);
-    
+
     js = (JavascriptExecutor) driver;
     vars = new HashMap<String, Object>();
   }
+
   @After
   public void tearDown() {
     driver.quit();
   }
+
   @Test
   public void passwordtooshort() {
     driver.get("https://facey-a2397.web.app//home");
-      try {
-        Thread.sleep(3000);
+    try {
+      Thread.sleep(3000);
     } catch (InterruptedException e) {
       e.printStackTrace();
-  }
+    }
     driver.manage().window().setSize(new Dimension(1294, 1400));
     try {
       Thread.sleep(3000);
-  } catch (InterruptedException e) {
-    e.printStackTrace();
-}
+    } catch (InterruptedException e) {
+      e.printStackTrace();
+    }
     driver.findElement(By.cssSelector(".v-overlay__scrim")).click();
     try {
       Thread.sleep(3000);
-  } catch (InterruptedException e) {
-    e.printStackTrace();
-}
+    } catch (InterruptedException e) {
+      e.printStackTrace();
+    }
     {
       WebElement element = driver.findElement(By.cssSelector(".success:nth-child(4) > .v-btn__content"));
       Actions builder = new Actions(driver);
@@ -72,15 +76,15 @@ public class PasswordtooshortTest {
     }
     try {
       Thread.sleep(3000);
-  } catch (InterruptedException e) {
-    e.printStackTrace();
-}
+    } catch (InterruptedException e) {
+      e.printStackTrace();
+    }
     driver.findElement(By.cssSelector(".success:nth-child(4) > .v-btn__content")).click();
     try {
       Thread.sleep(3000);
-  } catch (InterruptedException e) {
-    e.printStackTrace();
-}
+    } catch (InterruptedException e) {
+      e.printStackTrace();
+    }
     {
       WebElement element = driver.findElement(By.tagName("body"));
       Actions builder = new Actions(driver);
@@ -88,77 +92,76 @@ public class PasswordtooshortTest {
     }
     try {
       Thread.sleep(3000);
-  } catch (InterruptedException e) {
-    e.printStackTrace();
-}
+    } catch (InterruptedException e) {
+      e.printStackTrace();
+    }
     driver.findElement(By.cssSelector(".v-card__text:nth-child(5) > .v-btn")).click();
     try {
       Thread.sleep(3000);
-  } catch (InterruptedException e) {
-    e.printStackTrace();
-}
+    } catch (InterruptedException e) {
+      e.printStackTrace();
+    }
     vars.put("emailrandom", js.executeScript("return \"ual-\" + Math.floor(Math.random()*1500000)+\"@ual.es\""));
     try {
       Thread.sleep(3000);
-  } catch (InterruptedException e) {
-    e.printStackTrace();
-}
+    } catch (InterruptedException e) {
+      e.printStackTrace();
+    }
     System.out.println(vars.get("emailrandom").toString());
     try {
       Thread.sleep(3000);
-  } catch (InterruptedException e) {
-    e.printStackTrace();
-}
+    } catch (InterruptedException e) {
+      e.printStackTrace();
+    }
     driver.findElement(By.cssSelector(".v-card__text:nth-child(6) .v-btn__content")).click();
     try {
       Thread.sleep(3000);
-  } catch (InterruptedException e) {
-    e.printStackTrace();
-}
+    } catch (InterruptedException e) {
+      e.printStackTrace();
+    }
     driver.findElement(By.id("email")).click();
     try {
       Thread.sleep(3000);
-  } catch (InterruptedException e) {
-    e.printStackTrace();
-}
+    } catch (InterruptedException e) {
+      e.printStackTrace();
+    }
     driver.findElement(By.id("email")).sendKeys(vars.get("emailrandom").toString());
     try {
       Thread.sleep(3000);
-  } catch (InterruptedException e) {
-    e.printStackTrace();
-}
+    } catch (InterruptedException e) {
+      e.printStackTrace();
+    }
     driver.findElement(By.id("password")).click();
     try {
       Thread.sleep(3000);
-  } catch (InterruptedException e) {
-    e.printStackTrace();
-}
+    } catch (InterruptedException e) {
+      e.printStackTrace();
+    }
     driver.findElement(By.id("password")).sendKeys("1234");
     try {
       Thread.sleep(3000);
-  } catch (InterruptedException e) {
-    e.printStackTrace();
-}
+    } catch (InterruptedException e) {
+      e.printStackTrace();
+    }
     driver.findElement(By.id("name")).click();
     try {
       Thread.sleep(3000);
-  } catch (InterruptedException e) {
-    e.printStackTrace();
-}
+    } catch (InterruptedException e) {
+      e.printStackTrace();
+    }
     driver.findElement(By.id("name")).sendKeys(vars.get("emailrandom").toString());
     try {
       Thread.sleep(3000);
-  } catch (InterruptedException e) {
-    e.printStackTrace();
-}
+    } catch (InterruptedException e) {
+      e.printStackTrace();
+    }
     driver.findElement(By.xpath("//button[@id=\'loginButton\']")).click();
     try {
       Thread.sleep(3000);
-  } catch (InterruptedException e) {
-    e.printStackTrace();
-}
+    } catch (InterruptedException e) {
+      e.printStackTrace();
+    }
     assertThat(driver.findElement(By.xpath("//strong")).getText(), is("Password should be at least 6 characters"));
 
-   
   }
 }
