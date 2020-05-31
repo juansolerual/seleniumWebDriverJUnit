@@ -55,7 +55,7 @@ public class LoggedincorrectTest {
   public void loggedincorrect1() {
     driver.get("https://facey-a2397.web.app/home");
     try {
-      Thread.sleep(1000);
+      Thread.sleep(3000);
   } catch (InterruptedException e) {
       e.printStackTrace();
   }
