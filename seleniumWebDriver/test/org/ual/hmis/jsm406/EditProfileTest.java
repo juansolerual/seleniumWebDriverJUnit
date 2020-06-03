@@ -46,24 +46,60 @@ public class EditProfileTest {
 
   @Test
   public void editProfile() {
+    try {
+      Thread.sleep(2000);
+  } catch (InterruptedException e) {
+      e.printStackTrace();
+  }
     driver.get("https://facey-a2397.web.app/home");
+    try {
+      Thread.sleep(4000);
+  } catch (InterruptedException e) {
+      e.printStackTrace();
+  }
     vars.put("nombrerandom", js.executeScript("return \"nombre_\" + Math.floor(Math.random()*1500000)"));
     vars.put("apellidorandom", js.executeScript("return \"apellido_\" + Math.floor(Math.random()*1500000)"));
     System.out.println(vars.get("nombrerandom").toString());
     System.out.println(vars.get("apellidorandom").toString());
+    try {
+      Thread.sleep(4000);
+  } catch (InterruptedException e) {
+      e.printStackTrace();
+  }
     driver.findElement(By.xpath("//div[@id=\'app\']/div/div")).click();
+    try {
+      Thread.sleep(4000);
+  } catch (InterruptedException e) {
+      e.printStackTrace();
+  }
     driver.findElement(By.xpath("//div[@id=\'app\']/div/header/div/a/span")).click();
-    {
+    try {
+      Thread.sleep(4000);
+  } catch (InterruptedException e) {
+      e.printStackTrace();
+  }
+    /* {
       WebElement element = driver.findElement(By.tagName("body"));
       Actions builder = new Actions(driver);
       builder.moveToElement(element, 0, 0).perform();
-    }
-    driver.findElement(By.xpath("//input[@id=\'email\']")).click();
+    }*/
+
+    
     driver.findElement(By.xpath("//input[@id=\'email\']")).sendKeys("ual-446221@ual.es");
     driver.findElement(By.xpath("//input[@id=\'password\']")).sendKeys("123456");
     driver.findElement(By.xpath("//button[@id=\'loginButton\']")).click();
+    try {
+      Thread.sleep(4000);
+  } catch (InterruptedException e) {
+      e.printStackTrace();
+  }
     driver.findElement(By.xpath("//button[@id=\'drawer\']/span/i")).click();
     driver.findElement(By.cssSelector(".v-avatar > img")).click();
+    try {
+      Thread.sleep(4000);
+  } catch (InterruptedException e) {
+      e.printStackTrace();
+  }
     {
       String value = driver.findElement(By.xpath("//input[@id=\'email-profile\']")).getAttribute("value");
       assertThat(value, is("ual-446221@ual.es"));
@@ -71,8 +107,23 @@ public class EditProfileTest {
     driver.findElement(By.xpath("//input[@id=\'email-nombre\']")).sendKeys(vars.get("nombrerandom").toString());
     driver.findElement(By.xpath("//input[@id=\'email-apellidos\']")).sendKeys(vars.get("apellidorandom").toString());
     driver.findElement(By.cssSelector(".blue > .v-btn__content")).click();
+    try {
+      Thread.sleep(4000);
+  } catch (InterruptedException e) {
+      e.printStackTrace();
+  }
     driver.get("https://facey-a2397.web.app/perfil");
+    try {
+      Thread.sleep(4000);
+  } catch (InterruptedException e) {
+      e.printStackTrace();
+  }
     driver.findElement(By.cssSelector(".v-avatar > img")).click();
+    try {
+      Thread.sleep(4000);
+  } catch (InterruptedException e) {
+      e.printStackTrace();
+  }
     {
       String value = driver.findElement(By.xpath("//input[@id=\'email-profile\']")).getAttribute("value");
       assertThat(value, is("ual-446221@ual.es"));
