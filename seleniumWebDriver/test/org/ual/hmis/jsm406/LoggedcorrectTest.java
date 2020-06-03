@@ -70,11 +70,12 @@ public class LoggedcorrectTest {
       e.printStackTrace();
   }
 
-    {
+   /* {
       WebElement element = driver.findElement(By.tagName("body"));
       Actions builder = new Actions(driver);
       builder.moveToElement(element, 0, 0).perform();
     }
+    */
      try {
         Thread.sleep(1000);
     } catch (InterruptedException e) {
@@ -113,7 +114,7 @@ public class LoggedcorrectTest {
     
 
 
-    driver.findElement(By.xpath("//div[@id=\'perfil\']/a/div/img")).click();
+    driver.findElement(By.id("perfil")).click();
    
 
     {

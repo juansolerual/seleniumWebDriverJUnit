@@ -74,11 +74,11 @@ public class LoggedincorrectTest {
       e.printStackTrace();
   }
 
-    {
+    /* {
       WebElement element = driver.findElement(By.tagName("body"));
       Actions builder = new Actions(driver);
       builder.moveToElement(element, 0, 0).perform();
-    }
+    }*/
      try {
         Thread.sleep(1000);
     } catch (InterruptedException e) {

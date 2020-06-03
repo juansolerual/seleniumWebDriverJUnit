@@ -119,7 +119,7 @@ public class EditProfileTest {
     //driver.findElement(By.id("drawer")).click();
     System.out.println("7");
 
-    driver.findElement(By.cssSelector(".v-avatar > img")).click();
+    driver.findElement(By.id("perfil")).click();
     System.out.println("8");
 
     try {
@@ -159,7 +159,7 @@ public class EditProfileTest {
   } catch (InterruptedException e) {
       e.printStackTrace();
   }
-    driver.findElement(By.cssSelector(".v-avatar > img")).click();
+    driver.findElement(By.id("perfil")).click();
     System.out.println("15");
 
     try {
