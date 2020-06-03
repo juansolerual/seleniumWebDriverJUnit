@@ -116,7 +116,7 @@ public class EditProfileTest {
       e.printStackTrace();
   }
     //driver.findElement(By.xpath("//button[@id=\'drawer\']")).click();
-    driver.findElement(By.id("drawer")).click();
+    //driver.findElement(By.id("drawer")).click();
     System.out.println("7");
 
     driver.findElement(By.cssSelector(".v-avatar > img")).click();
