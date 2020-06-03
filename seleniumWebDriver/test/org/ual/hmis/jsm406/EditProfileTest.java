@@ -61,7 +61,6 @@ public class EditProfileTest {
   }
 
   @Test
-  @Category({Categories.ChromeTests.class})
   public void editProfile() {
     driver = driverChrome;
     js = jsChrome;
@@ -195,4 +194,10 @@ public class EditProfileTest {
 
     }
   }
+
+  /* @Test
+  @Category({Categories.ChromeTests.class})
+  public void prueba(){
+    System.out.println("prueba");
+  } */
 }
