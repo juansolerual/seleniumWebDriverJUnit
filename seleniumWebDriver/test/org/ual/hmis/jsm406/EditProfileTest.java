@@ -2,7 +2,6 @@ package org.ual.hmis.jsm406;
 
 import org.junit.Test;
 import org.junit.experimental.categories.Category;
-import org.junit.jupiter.api.Tag;
 
 import org.junit.Before;
 import org.junit.After;
@@ -29,6 +28,7 @@ import java.util.*;
 import java.net.MalformedURLException;
 import java.net.URL;
 
+//@Category(Categories.Tests.class)
 public class EditProfileTest {
   private WebDriver driverFirefox;
   private WebDriver driverChrome;
