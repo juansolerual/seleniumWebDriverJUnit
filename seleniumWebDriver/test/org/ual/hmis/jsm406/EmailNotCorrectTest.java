@@ -43,6 +43,11 @@ public class EmailNotCorrectTest {
   @Test
   public void emailNotCorrect() {
     driver.get("https://facey-a2397.web.app//home");
+    try {
+      Thread.sleep(4000);
+  } catch (InterruptedException e) {
+      e.printStackTrace();
+  }
     driver.manage().window().setSize(new Dimension(1294, 1400));
     driver.findElement(By.cssSelector(".v-overlay__scrim")).click();
     driver.findElement(By.cssSelector(".v-overlay__scrim")).click();
