@@ -30,42 +30,35 @@ import java.net.URL;
 
 //@Category(Categories.Tests.class)
 public class EditProfileTest {
-  private WebDriver driverFirefox;
-  private WebDriver driverChrome;
+
   private WebDriver driver;
   private Map<String, Object> vars;
-  JavascriptExecutor jsFirefox;
-  JavascriptExecutor jsChrome;
+
   JavascriptExecutor js;
 
 
   @Before
   public void setUp() {
-    FirefoxOptions firefoxOptions = new FirefoxOptions();
-    firefoxOptions.setHeadless(true);
-    driverFirefox = new FirefoxDriver(firefoxOptions);
+    
 
     ChromeOptions chromeOptions = new ChromeOptions();
     chromeOptions.setHeadless(true);
-    driverChrome = new ChromeDriver(chromeOptions);
+    driver = new ChromeDriver(chromeOptions);
 
 
-    jsFirefox = (JavascriptExecutor) driverFirefox;
-    jsChrome = (JavascriptExecutor) driverChrome;
+    js = (JavascriptExecutor) driver;
     
     vars = new HashMap<String, Object>();
   }
 
   @After
   public void tearDown() {
-    driverFirefox.quit();
-    driverChrome.quit();
+    driver.quit();
   }
 
   @Test
   public void editProfile() {
-    driver = driverChrome;
-    js = jsChrome;
+    
     try {
       Thread.sleep(2000);
   } catch (InterruptedException e) {
