@@ -2,6 +2,8 @@ package org.ual.hmis.jsm406;
 
 import org.junit.Test;
 import org.junit.experimental.categories.Category;
+import org.junit.jupiter.api.Tag;
+
 import org.junit.Before;
 import org.junit.After;
 import static org.junit.Assert.*;
@@ -61,6 +63,7 @@ public class EditProfileTest {
   }
 
   @Test
+  @Tag("ChromeTests")
   public void editProfile() {
     driver = driverChrome;
     js = jsChrome;
