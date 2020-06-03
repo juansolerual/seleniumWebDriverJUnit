@@ -29,7 +29,6 @@ import java.util.*;
 import java.net.MalformedURLException;
 import java.net.URL;
 
-//@Category(Categories.Tests.class)
 public class EditProfileTest {
   private WebDriver driverFirefox;
   private WebDriver driverChrome;
@@ -64,7 +63,6 @@ public class EditProfileTest {
   }
 
   @Test
-  //@Category({Categories.ChromeTests.class})
   public void editProfile() {
     driver = driverChrome;
     js = jsChrome;
