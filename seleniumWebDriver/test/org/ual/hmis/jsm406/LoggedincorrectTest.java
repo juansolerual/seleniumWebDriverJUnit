@@ -33,8 +33,8 @@ public class LoggedincorrectTest {
   JavascriptExecutor js;
   @Before
   public void setUp() {
-    System.setProperty("webdriver.gecko.driver", "drivers/geckodriver.exe");
-    System.setProperty("webdriver.chrome.driver", "drivers/chromedriver.exe");
+    // System.setProperty("webdriver.gecko.driver", "drivers/geckodriver.exe");
+    // System.setProperty("webdriver.chrome.driver", "drivers/chromedriver.exe");
 
     /* ChromeOptions chromeOptions = new ChromeOptions();
     chromeOptions.setHeadless(true);
@@ -55,7 +55,7 @@ public class LoggedincorrectTest {
   public void loggedincorrect1() {
     driver.get("https://facey-a2397.web.app/home");
     try {
-      Thread.sleep(1000);
+      Thread.sleep(3000);
   } catch (InterruptedException e) {
       e.printStackTrace();
   }

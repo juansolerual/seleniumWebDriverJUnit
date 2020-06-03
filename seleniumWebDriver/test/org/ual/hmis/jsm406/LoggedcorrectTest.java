@@ -31,8 +31,8 @@ public class LoggedcorrectTest {
   JavascriptExecutor js;
   @Before
   public void setUp() {
-    System.setProperty("webdriver.gecko.driver", "drivers/geckodriver.exe");
-    System.setProperty("webdriver.chrome.driver", "drivers/chromedriver.exe");
+    // System.setProperty("webdriver.gecko.driver", "drivers/geckodriver.exe");
+    // System.setProperty("webdriver.chrome.driver", "drivers/chromedriver.exe");
     FirefoxOptions firefoxOptions = new FirefoxOptions();
     firefoxOptions.setHeadless(true);
     driver = new FirefoxDriver(firefoxOptions);
@@ -51,7 +51,7 @@ public class LoggedcorrectTest {
   public void loggedcorrect() {
     driver.get("https://facey-a2397.web.app/home");
     try {
-      Thread.sleep(3000);
+      Thread.sleep(4000);
   } catch (InterruptedException e) {
       e.printStackTrace();
   }
@@ -104,7 +104,7 @@ public class LoggedcorrectTest {
 
     driver.findElement(By.xpath("//button[@id=\'loginButton\']")).click();
     try {
-      Thread.sleep(2000);
+      Thread.sleep(3000);
   } catch (InterruptedException e) {
       e.printStackTrace();
   }
