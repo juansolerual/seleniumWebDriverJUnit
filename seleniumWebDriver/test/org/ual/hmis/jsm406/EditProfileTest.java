@@ -1,6 +1,7 @@
 package org.ual.hmis.jsm406;
 
 import org.junit.Test;
+import org.junit.experimental.categories.Category;
 import org.junit.Before;
 import org.junit.After;
 import static org.junit.Assert.*;
@@ -11,6 +12,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.Dimension;
@@ -26,26 +28,43 @@ import java.net.MalformedURLException;
 import java.net.URL;
 
 public class EditProfileTest {
+  private WebDriver driverFirefox;
+  private WebDriver driverChrome;
   private WebDriver driver;
   private Map<String, Object> vars;
+  JavascriptExecutor jsFirefox;
+  JavascriptExecutor jsChrome;
   JavascriptExecutor js;
+
 
   @Before
   public void setUp() {
     FirefoxOptions firefoxOptions = new FirefoxOptions();
     firefoxOptions.setHeadless(true);
-    driver = new FirefoxDriver(firefoxOptions);
-    js = (JavascriptExecutor) driver;
+    driverFirefox = new FirefoxDriver(firefoxOptions);
+
+    ChromeOptions chromeOptions = new ChromeOptions();
+    chromeOptions.setHeadless(true);
+    driverChrome = new ChromeDriver(chromeOptions);
+
+
+    jsFirefox = (JavascriptExecutor) driverFirefox;
+    jsChrome = (JavascriptExecutor) driverChrome;
+    
     vars = new HashMap<String, Object>();
   }
 
   @After
   public void tearDown() {
-    driver.quit();
+    driverFirefox.quit();
+    driverChrome.quit();
   }
 
   @Test
+  @Category({Categories.ChromeTests.class})
   public void editProfile() {
+    driver = driverChrome;
+    js = jsChrome;
     try {
       Thread.sleep(2000);
   } catch (InterruptedException e) {
@@ -102,7 +121,7 @@ public class EditProfileTest {
   } catch (InterruptedException e) {
       e.printStackTrace();
   }
-    driver.findElement(By.xpath("//button[@id=\'drawer\']/span/i")).click();
+    driver.findElement(By.xpath("//button[@id=\'drawer\']")).click();
     System.out.println("7");
 
     driver.findElement(By.cssSelector(".v-avatar > img")).click();
