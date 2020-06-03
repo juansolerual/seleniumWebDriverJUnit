@@ -100,10 +100,10 @@ public class EditProfileTest {
       builder.moveToElement(element, 0, 0).perform();
     }*/
 
-    
+    driver.findElement(By.xpath("//input[@id=\'email\']")).clear();
     driver.findElement(By.xpath("//input[@id=\'email\']")).sendKeys("ual-446221@ual.es");
     System.out.println("4");
-
+    driver.findElement(By.xpath("//input[@id=\'password\']")).clear();
     driver.findElement(By.xpath("//input[@id=\'password\']")).sendKeys("123456");
     System.out.println("5");
 
@@ -135,9 +135,11 @@ public class EditProfileTest {
       System.out.println("10");
 
     }
+    driver.findElement(By.xpath("//input[@id=\'email-nombre\']")).clear();
     driver.findElement(By.xpath("//input[@id=\'email-nombre\']")).sendKeys(vars.get("nombrerandom").toString());
     System.out.println("11");
 
+    driver.findElement(By.xpath("//input[@id=\'email-apellidos\']")).clear();
     driver.findElement(By.xpath("//input[@id=\'email-apellidos\']")).sendKeys(vars.get("apellidorandom").toString());
     System.out.println("12");
 
@@ -175,7 +177,7 @@ public class EditProfileTest {
     }
     {
       String value = driver.findElement(By.xpath("//input[@id=\'email-nombre\']")).getAttribute("value");
-      System.out.println("17");
+      System.out.println("17 = " + value);
 
       assertThat(value, is(vars.get("nombrerandom").toString()));
       System.out.println("18");
