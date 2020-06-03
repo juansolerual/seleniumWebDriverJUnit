@@ -41,9 +41,9 @@ public class EditProfileTest {
   public void setUp() {
     
 
-    ChromeOptions chromeOptions = new ChromeOptions();
-    chromeOptions.setHeadless(true);
-    driver = new ChromeDriver(chromeOptions);
+    FirefoxOptions firefoxOptions = new FirefoxOptions();
+    firefoxOptions.setHeadless(true);
+    driver = new FirefoxDriver(firefoxOptions);
 
 
     js = (JavascriptExecutor) driver;
@@ -115,7 +115,8 @@ public class EditProfileTest {
   } catch (InterruptedException e) {
       e.printStackTrace();
   }
-    driver.findElement(By.xpath("//button[@id=\'drawer\']")).click();
+    //driver.findElement(By.xpath("//button[@id=\'drawer\']")).click();
+    driver.findElement(By.id("drawer")).click();
     System.out.println("7");
 
     driver.findElement(By.cssSelector(".v-avatar > img")).click();
